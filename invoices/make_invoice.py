@@ -15,3 +15,25 @@ from repositories.client_repository import ClientRepository
 from database import SessionLocal
 
 import constant
+
+# page configuration
+st.set_page_config(page_title="Make Invoice", layout="wide")
+
+st.title("Invoice Generator") 
+
+if "invoice_items" not in st.session_state:
+    st.session_state["invoice_items"] = []
+
+if "preview_pdf_path" not in st.session_state:
+    st.session_state["preview_pdf_path"] = None
+
+if "invoice_object" not in st.session_state:
+    st.session_state["invoice_object"] = None
+
+if "invoice_number" not in st.session_state:
+    st.session_state["invoice_number"] = None
+
+if "invoice_saved" not in st.session_state:
+    st.session_state["invoice_saved"] = False
+
+# e
